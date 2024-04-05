@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app >
-  <display-name>MoviesApp</display-name>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+  <display-name>MediTrack</display-name>
   <welcome-file-list>
-  	<welcome-file>Home.html</welcome-file>
+    <welcome-file>Home.html</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -12,13 +12,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>AddMovie</display-name>
-    <servlet-name>AddMovie</servlet-name>
-    <servlet-class>AddMovie</servlet-class>
+    <display-name>AddMedicine</display-name>
+    <servlet-name>AddMedicine</servlet-name>
+    <servlet-class>AddMedicine</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AddMovie</servlet-name>
-    <url-pattern>/AddMovie</url-pattern>
+    <servlet-name>AddMedicine</servlet-name>
+    <url-pattern>/AddMedicine</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -42,23 +42,23 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>DeleteMovie</display-name>
-    <servlet-name>DeleteMovie</servlet-name>
-    <servlet-class>DeleteMovie</servlet-class>
+    <display-name>DeleteMedicine</display-name>
+    <servlet-name>DeleteMedicine</servlet-name>
+    <servlet-class>DeleteMedicine</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DeleteMovie</servlet-name>
-    <url-pattern>/DeleteMovie</url-pattern>
+    <servlet-name>DeleteMedicine</servlet-name>
+    <url-pattern>/DeleteMedicine</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>UpdateMovie</display-name>
-    <servlet-name>UpdateMovie</servlet-name>
-    <servlet-class>UpdateMovie</servlet-class>
+    <display-name>UpdateMedicine</display-name>
+    <servlet-name>UpdateMedicine</servlet-name>
+    <servlet-class>UpdateMedicine</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>UpdateMovie</servlet-name>
-    <url-pattern>/UpdateMovie</url-pattern>
+    <servlet-name>UpdateMedicine</servlet-name>
+    <url-pattern>/UpdateMedicine</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>MediTrack - A Medicine Management System</title>
+	    <style>
+        body {
+            background-color: #1E1E1E;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            background-color: #17B169 ;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #018749;
+        }
+    </style>
+	</head>
+	<body>
+	 <div align="center">
+	  <h1>Add A New Medicine</h1>
+	  <form action="AddMedicine" method="POST">
+	   <table >
+	    <tr>
+	     <td>Patient Id</td>
+	     <td><input type="number" name="id" /></td>
+	    </tr>
+	    <tr>
+	     <td>Medicine Id</td>
+	     <td><input type="number" name="medi_id" /></td>
+	    </tr>
+	    <tr>
+	     <td>Medicine Name</td>
+	     <td><input type="text" name="name" /></td>
+	    </tr>
+	    <tr>
+	     <td>No. Of Doses</td>
+	     <td><input type="number" name="doses" /></td>
+	    </tr>
+	    <tr>
+	     <td>Age</td>
+	     <td><input type="number" name="age" /></td>
+	    </tr>
+	    
+	   </table>
+	   <br>
+	   <input type="submit" value="Click to Insert" />
+	  </form>
+	 </div>
+	</body>
+	</html>

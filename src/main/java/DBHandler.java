@@ -1,3 +1,4 @@
+
 import java.sql.*;
 
 
@@ -19,27 +20,27 @@ public class DBHandler {
 
 	
 	
-	public static Movies[] getMovies() throws SQLException, Exception {
+	public static Medicines[] getMedicines() throws SQLException, Exception {
 		
 		Statement stmt = getConnection().createStatement();
-		ResultSet rs= stmt.executeQuery("select * from movies");
-		Movies movies[]= new Movies[20];
+		ResultSet rs= stmt.executeQuery("select * from medi");
+		Medicines medicines[]= new Medicines[20];
 		int i=0;
 		while(rs.next()) {
-			movies[i] = new Movies(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+			medicines[i] = new Medicines(rs.getInt(1),rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getInt(5));
 			i++;
 		}
-		return movies;
+		return medicines;
 		
 	}
 	
-	public static int insertMovie(int id, String title, String genre, int releaseYear) throws SQLException, Exception {
+	public static int insertMedicine(int id, int medi_id, String name, int doses, int age) throws SQLException, Exception {
         Connection con = getConnection();
         Statement stmt = null;
         int result =0;
         try {
             
-            String sql = "INSERT INTO movies (id, title, genre, release_year) VALUES (" + id + ", '" + title + "', '" + genre + "', " + releaseYear + ")";
+            String sql = "INSERT INTO medi (id, medi_id, name, doses, age) VALUES (" + id + ",'" + medi_id + "' ,'" + name + "', '" + doses + "', " + age + ")";
             
             // Create a Statement object
             stmt = con.createStatement();
@@ -59,15 +60,15 @@ public class DBHandler {
     }
 	
         
-    public static int deleteMovie(int movie_id) throws Exception {
+    public static int deleteMedicine(int id, int medi_id) throws Exception {
     	Connection con = getConnection();
     	Statement stmt = null;
     	int result = 0;
     	try {
-    		String sql = "DELETE FROM movies WHERE id = " + movie_id;
+    		String sql = "DELETE FROM medi WHERE id = " + id + " AND medi_id = " + medi_id;
     		stmt = con.createStatement();
     		result = stmt.executeUpdate(sql);
-//    		System.out.println("Movie deleted successfully.");
+//    		System.out.println("Medicine deleted successfully.");
     	} catch (SQLException e) {
             System.out.println("SQL error occurred during the insert operation: " + e.getMessage());
             throw e;
@@ -79,14 +80,13 @@ public class DBHandler {
     	return result;
     }
     
-    public static int updateMovie(int movie_id,String new_title,String new_genre, int new_releaseYear) throws Exception {
+    public static int updateMedicine(int id,int medi_id,String new_name,int new_doses, int new_age) throws Exception {
     	Connection con = getConnection();
     	Statement stmt = null;
     	int result = 0;
     	
     	try {
-    		String sql = "UPDATE movies SET title = '" + new_title + "', genre = '" + new_genre + "', release_year = " + new_releaseYear + " WHERE id = " + movie_id;
-
+    		String sql = "UPDATE medi SET name = '" + new_name + "', doses = '" + new_doses + "', age = " + new_age + " WHERE id = " + id + " AND medi_id = " + medi_id;
     		stmt = con.createStatement();
     		result = stmt.executeUpdate(sql);
 //    		System.out.println("Movie details modified successfully.");
@@ -101,37 +101,5 @@ public class DBHandler {
     	return result;
     }
     
-    
-	
-//	public static void insertMovie(int id, String title, String genre, int releaseYear) throws SQLException, Exception {
-//		Connection con = getConnection();
-//	    
-//	    // Prepare the SQL statement with placeholders for the values
-//	    String sql = "INSERT INTO movies (id, title, genre, release_year) VALUES (?, ?, ?, ?)";
-//	    
-//	    // Use try-with-resources to ensure that resources are closed after the operation is complete
-//	    try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-//	        // Set the values for each placeholder
-//	        pstmt.setInt(1, id);
-//	        pstmt.setString(2, title);
-//	        pstmt.setString(3, genre);
-//	        pstmt.setInt(4, releaseYear);
-//	        
-//	        // Execute the insert operation
-//	        int affectedRows = pstmt.executeUpdate();
-//	        
-//	        // Check if the insert was successful
-//	        if (affectedRows > 0) {
-//	            System.out.println("Movie inserted successfully.");
-//	        } else {
-//	            System.out.println("Movie insertion failed.");
-//	        }
-//	    } catch (SQLException e) {
-//	        System.out.println("SQL error occurred during the insert operation: " + e.getMessage());
-//	        throw e; // Rethrow the exception to handle it in the calling method
-//	    }
-//	    // Note: No need to close the Connection or PreparedStatement here if using try-with-resources
-//	    
-//	    
-//	
+
 }

@@ -41,13 +41,13 @@ public class Home extends HttpServlet {
                     response.sendRedirect("Display");
                     break;
                 case "insert":
-                    response.sendRedirect("AddMovie.html");
+                    response.sendRedirect("AddMedicine.html");
                     break;
                 case "delete":
-                    response.sendRedirect("DeleteMovie.html");
+                    response.sendRedirect("DeleteMedicine.html");
                     break;
                 case "update":
-                    response.sendRedirect("UpdateMovie.html");
+                    response.sendRedirect("UpdateMedicine.html");
                     break;
                 case "exit":
                     response.getWriter().println("Goodbye! Have a nice Day");

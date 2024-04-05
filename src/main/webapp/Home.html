@@ -2,26 +2,116 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Movies Management System</title>
+	<title>MediTrack - A Medicine Management System</title>
     <style>
         body {
-            background-color: blue;
+            background-color: #1E1E1E;
             color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 550px;
+            text-align: center;
+        }
+
+        .option-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            background-color: #34495E;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(50% - 20px); /* Two options per row */
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option:hover {
+            background-color: #2C3E50;
+        }
+
+        .option label {
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        input[type="radio"]:checked + label::before {
+            background-color:  #C0C0C0;
+        }
+
+        input[type="submit"] {
+            background-color:	#585858;
+            font-size: 18px;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #383838;
+            
+        }
+
+        h1, h2 {
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
-    <div align="center">
-        <h1>Welcome to Movies Management System</h1>
+    <div class="container">
+        <h1>Welcome to MediTrack</h1>
+        <h2>A Medicine Management System</h2>
         <form action="Home" method="POST">
-            <label>Select an option:</label>
-            <select name="option">
-                <option value="show">Show Movies</option>
-                <option value="insert">Insert Movie</option>
-                <option value="delete">Delete Movie</option>
-                <option value="update">Update Movie</option>
-                <option value="exit">Exit</option>
-            </select>
+            <div class="option-container">
+                <input type="radio" id="show" name="option" value="show">
+                <label class="option" for="show">Show Records</label>
+                <input type="radio" id="insert" name="option" value="insert">
+                <label class="option" for="insert">Insert Records</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="delete" name="option" value="delete">
+                <label class="option" for="delete">Delete Records</label>
+                <input type="radio" id="update" name="option" value="update">
+                <label class="option" for="update">Update Records</label>
+            </div>
             <input type="submit" value="Submit">
         </form>
     </div>

@@ -16,14 +16,14 @@ import java.io.IOException;
 /**
  * Servlet implementation class DeleteMovie
  */
-@WebServlet("/DeleteMovie")
-public class DeleteMovie extends HttpServlet {
+@WebServlet("/DeleteMedicine")
+public class DeleteMedicine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteMovie() {
+    public DeleteMedicine() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,13 +43,13 @@ public class DeleteMovie extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-
+        int medi_id = Integer.parseInt(request.getParameter("medi_id"));
         try {
-            int result = DBHandler.deleteMovie(id);
+            int result = DBHandler.deleteMedicine(id, medi_id);
             if (result == 1) {
                 response.sendRedirect("Display");
             } else {
-                response.getWriter().println("Movie not found with ID: " + id);
+                response.getWriter().println("Medicine not found with ID: " + id);
             }
         } catch (SQLException e) {
             e.printStackTrace();

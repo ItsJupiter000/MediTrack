@@ -11,13 +11,13 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class UpdateMovie
  */
-public class UpdateMovie extends HttpServlet {
+public class UpdateMedicine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateMovie() {
+    public UpdateMedicine() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,13 +36,14 @@ public class UpdateMovie extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		int id = Integer.parseInt(request.getParameter("movie_id"));
-		String title = request.getParameter("new_title");;
-		String genre = request.getParameter("new_genre");
-		int releaseYear = Integer.parseInt(request.getParameter("new_releaseYear"));
+		int id = Integer.parseInt(request.getParameter("id"));
+		int medi_id = Integer.parseInt(request.getParameter("medi_id"));
+		String name = request.getParameter("new_name");;
+		int doses = Integer.parseInt(request.getParameter("new_doses"));
+		int age = Integer.parseInt(request.getParameter("new_age"));
 		
 		try {
-			 int result = DBHandler.updateMovie(id, title, genre, releaseYear);
+			 int result = DBHandler.updateMedicine(id, medi_id, name, doses, age);
 			 if(result == 1) {
 				 response.sendRedirect("Display");
 			 }
