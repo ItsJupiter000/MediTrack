@@ -22,8 +22,9 @@ MediTrack is an online medicine management system specifically crafted to monito
 
 - **Update Medicine**: Enables users to update existing medicine records with new information, including medicine name, number of doses, and date.
   
-![Screenshot (1278)](https://github.com/ItsJupiter000/MediTrack/assets/120741895/8dc56283-8bf5-4c90-a989-d624fdf93c5c)
-![Screenshot (1279)](https://github.com/ItsJupiter000/MediTrack/assets/120741895/095de09d-4a18-454b-a1f6-e084a0ae5f74)
+![Screenshot (1289)](https://github.com/ItsJupiter000/MediTrack/assets/120741895/ac093012-0c5f-41b7-b2fc-0ff6fca4467d)
+![Screenshot (1290)](https://github.com/ItsJupiter000/MediTrack/assets/120741895/f93fe4b1-2295-4697-bf20-4a60bb4406ae)
+
 
 
 ## Technologies Used
